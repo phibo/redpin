@@ -1,0 +1,23 @@
+#javaCode {
+	word-break: keep-all;
+	text-overflow: clip;
+	background-color: #f6f6f6;
+	color: #1f1f1f;
+	font-size: 12px;
+	font-family: monospace, "Courier New", Courier, Monaco, monospace;
+}
+
+#javaCode .comment {
+	color: #06532e;
+}
+
+#javaCode .keyword {
+	font-weight: bold;
+	color: #3d0015;
+	display: inline;
+}
+
+#javaCode .constant {
+	color: #090b3d;
+	display: inline;
+}

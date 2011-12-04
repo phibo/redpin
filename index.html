@@ -1,91 +1,161 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+
+	Nonzero1.0 by nodethirtythree design
+	http://www.nodethirtythree.com
+	missing in a maze
+
+-->
 <html>
 <head>
-  <meta charset='utf-8'>
-
-  <title>phibo/redpin @ GitHub</title>
-
-  <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      background-color: #e61a0a;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #ffffff;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-    h1 { font-size: 3.8em; color: #19e5f5; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #19e5f5; }
-    h3 { text-align: center; color: #19e5f5; }
-    a { color: #19e5f5; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-  </style>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+<title>Redpin - Indoor Positioning for the Rest of Us</title>
+<meta name="keywords" content="redpin, indoor positioning, location" />
+<meta name="description" content="An open source indoor positioning system" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" type="text/css" href="javaCode.css" />
 </head>
-
 <body>
-  <a href="https://github.com/phibo/redpin"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
 
-  <div id="container">
+<div id="header">
 
-    <div class="download">
-      <a href="https://github.com/phibo/redpin/zipball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/zip.png"></a>
-      <a href="https://github.com/phibo/redpin/tarball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/tar.png"></a>
-    </div>
+	<div id="header_inner" class="fixed">
 
-    <h1><a href="https://github.com/phibo/redpin">redpin</a>
-      <span class="small">by <a href="https://github.com/phibo">phibo</a></span></h1>
+		<div id="logo">
+		</div>
+		
+		<!-- <div id="menu">
+			<ul>
+				<li><a href="#" class="active">Blog</a></li>
+				<li><a href="#">About Me</a></li>
+				<li><a href="#">Photos</a></li>
+				<li><a href="#">Resources</a></li>
+				<li><a href="#">Contact Me</a></li>
+			</ul>
+		</div> -->
+		
+	</div>
+</div>
 
-    <div class="description">
-      Indoor Positioning that just works
-    </div>
+<div id="main">
 
-    
+	<div id="main_inner" class="fixed">
 
-    
+		<div id="primaryContent_columnless">
 
-    
+			<div id="columnA_columnless">
+		
+				<h3>What is Redpin?</h3>
+				<p>
+					Repin is an open source indoor positioning system that was developed with the goal of providing at least room-level accuracy.
+					Moreover, it avoids the time-consuming training and setup phase known from other systems and instead relies on the user
+					community. </li>
+					</ul>
+				</p>
 
-    
-      <h2>License</h2>
-      <p>LGPL</p>
-    
+                <h4>How it works</h4>
+				<p>Redpin can determine the location of a device with room level accuracy. Being a fingerprint-based system, Redpin will not provide geographic coordinates but rather symbolic identifiers as for example the number or name of a room. <!--In order to increase accuracy and reliability, Redpin measures WiFi (802.11), GSM as well as Bluetooth signals.-->
+				</p>
+				
+                <img src="images/fingerprints.png" class="floatTL" alt="Example Fingerprints on a Map" />
+				
+				<p>Instead of relying on a static fingerprint model, Redpin does not make a difference between training and usage. Redpin can be used right away and allows its user to enter the symbolic labels if necessary. As this is an ongoing process, Redpin can also easily adapt to changes in the environment, caused for example by replaced access points.
+For more detailed information please refer to our paper <a href="http://www.vs.inf.ethz.ch/publ/papers/bolligph-redpin2008.pdf">Redpin -  Adaptive, Zero-Configuration Indoor Localization through User Collaboration</a>.<br>
+				</p>
+				<br>
+				
+				<p>Redpin consist of two basic components: a sniffer component that gathers and collects information about different wireless devices in range in order to create a fingerprint, and a locator component, which stores measured fingerprints in a repository and contains the algorithm to locate a mobile device. To allow easy, realiable and fast user collaboration, the locator is run as a central server. It is implemented using Java SE 6.0 and SQLite (or MySQL). As sniffer component we use an iPhone application that gathers information about different wireless devices in range.
+				</p>
+				
+				
+				
+				
+				<h3>How to install</h3>
+				<img src="images/iphone/iphone1.jpg" class="floatRL" alt="Example Fingerprints on a Map" />
+				<div style="width:300px;">
+				 
+				<p>
+				All Redpin components are available as either <a href="http://www.eclipse.org/">Eclipse</a> or <a href="http://developer.apple.com/tools/xcode/">XCode</a> projects and can be downloaded from the <a href="http://sourceforge.net/svn/?group_id=219301">Redpin sourceforge site</a> via SVN.
+				The server can also be downloaded as a jar file from the download section <a href="https://sourceforge.net/projects/redpin/files/">here</a>.
+				
+			</p>
+				
+				
+		        <h4>Redpin Standalone Server</h4>
+				<p>
+				    <ul>
+				        <li>Download the <a href="http://sourceforge.net/projects/redpin/files/Redpin%20Standalone%20Server/redpin.jar/download">redpin.jar</a> file.</li>
+				        <li>Launch the server from command line using <br /><code>java -jar redpin.jar [port]</code></li>
+				    </ul>
+				    <ul>
+				        <li>For more information have a look at the <a href="redpin-standalone.html">detailed installation instructions</a>
 
-    
-      <h2>Authors</h2>
-      <p>Philipp Bolliger (pbolliger@gmail.com)<br/>      </p>
-    
+				    </ul>
+				    <br>	    
+			<h4>Redpin iPhone Client</h4>
+				    <ul>				        
+				        <li>Check out the 'Redpin_iPhone' project from the <a href="http://sourceforge.net/svn/?group_id=219301">Redpin sourceforge site</a> or download the <a href="https://sourceforge.net/projects/redpin/files/Redpin%20iPhone/Redpin.zip/download">Redpin.zip</a> file and open it in XCode</li>
+				        <li>Join the <a href="http://developer.apple.com/iphone/program/">iPhone Developer Program</a></li>
+				        <li><a href="http://developer.apple.com/iphone/my/bundles/index.action">Create your App ID</a> and change the XCode project settings accordingly</li>
+				        <li><a href="http://developer.apple.com/iphone/my/provision/index.action">Create a Development Provisioning Profile</a> and install it</li>
+				        <li>Build and distribute the Redpin iPhone app</li>
+				        <li>On the iPhone, change the app settings and adjust ip and port to your values (or change the default values in the source file ServerConnection.m)</li>
+				    </ul>
+				    	</p>		
+				</div>
+			</div>
+			
+		</div>
 
-    
-      <h2>Contact</h2>
-      <p>Philipp Bolliger (pbolliger@gmail.com)<br/>      </p>
-    
+		<br class="clear" />
+	   <p>Now you're ready to <a href="#inaction">run Redpin</a>. Have fun! <br />Feel free to subscribe to our <a href="https://lists.sourceforge.net/lists/listinfo/redpin-support">mailing list</a>.</p>
+	   
 
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="https://github.com/phibo/redpin/zipball/master">zip</a> or
-      <a href="https://github.com/phibo/redpin/tarball/master">tar formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/phibo/redpin</pre>
-    </p>
+		 <a name="inaction" ></a>
+	   <h3>Redpin in Action</h3>
+	  
+	   <script type='text/javascript' src='mediaplayer/swfobject.js'></script>
+ 
+		<div id='mediaspace'><ul>
+	   	<li><a href="resources/mov/screencast1.mov">Screencast 1</a></li>
+	   	<li><a href="resources/mov/screencast2.mov">Screencast 2</a></li>
+	   	<li><a href="resources/mov/screencast3.mov">Screencast 3</a></li>
+	   </ul></div>
+		 
+		<script type='text/javascript'>
+		  var so = new SWFObject('mediaplayer/player.swf','mpl','650','470','9');
+		  so.addParam('allowfullscreen','true');
+		  so.addParam('allowscriptaccess','always');
+		  so.addParam('wmode','opaque');
+		  so.addVariable('playlistfile','resources/mov/list.xml');
+		  so.addVariable('playlist','right');
+		  so.addVariable('playlistsize','200');
+		  so.write('mediaspace');
+		</script>
+		
+		<p>&nbsp;</p>
+		
+	 <h3>But wait...</h3>
+	   <p>Are you working on modifications, improvements, or would like to contribute something? <a href="mailto:bolligph@inf.ethz.ch">Let us know</a>
+	   <br />
+	   Feel free to subscribe to our <a href="https://lists.sourceforge.net/lists/listinfo/redpin-support">mailing list</a></p>
 
-    <div class="footer">
-      get the source code on GitHub : <a href="https://github.com/phibo/redpin">phibo/redpin</a>
-    </div>
+	
 
-  </div>
+		
+	<p>&nbsp;</p>
+	   <h3>Redpin symbian</h3>
+	   <p>If you'd like to use the old version of redpin (for symbian), all information needed can be found <a href="redpin-symbian.html">here</a>
+	</div>
+
+
+</div>
+
+<div id="footer" class="fixed">
+    The <a href="mailto:bolligph@inf.ethz.ch">Repin-Team</a>
+    <br class="clear" />     <br class="clear" />
+	Copyright &copy; 2008-2011 ETH Zurich. All rights reserved.</div>
+	<div id="footer_small">Design based on 'nonzero' by <a href="http://www.nodethirtythree.com/">NodeThirtyThree Design</a></div>.
 
 </body>
 </html>

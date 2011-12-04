@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+
+	Nonzero1.0 by nodethirtythree design
+	http://www.nodethirtythree.com
+	missing in a maze
+
+-->
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+<title>Redpin - Indoor Positioning for the Rest of Us - Runnning the Application</title>
+<meta name="keywords" content="redpin, indoor positioning, location" />
+<meta name="description" content="An open source indoor positioning system" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" type="text/css" href="javaCode.css" />
+</head>
+<body>
+
+<div id="header">
+
+	<div id="header_inner" class="fixed">
+
+		<div id="logo">
+		</div>
+		
+		
+		
+	</div>
+</div>
+
+<div id="main">
+
+	<div id="main_inner" class="fixed">
+
+		<div id="primaryContent_columnless">
+
+			<div id="columnA_columnless">
+			<h3>Redpin Standalone Server - Installation Instructions</h3>
+				<h3>Development Environment</h3>
+					<h4>How to install</h4>	
+					 <ul>
+				        <li>Check out the 'Redpin' <b>and</b> 'RedpinServer_v2' project from the <a href="http://sourceforge.net/svn/?group_id=219301">Redpin sourceforge site</a> into your Eclipse workspace.</li>
+				        <li>Launch 'RedpinStandaloneServer'.</li>
+				        <li><i>Optional:</i> <a href="#import">Import some maps</a></li> 
+				        </ul>
+				        
+				        <a name="dev_bulid"></a>
+				        <h4>How to build</h4>
+				        <ul><li>Build Redpin with the supplied ant script and run it using the scripts in the RedpinServer_v2/scripts directory.</li></ul>
+				        
+				   
+
+				    </ul>
+				
+				
+				<h3>Production Environment</h3>
+					<h4>How to install</h4>	
+					<ul>
+				        <li>Download the <a href="http://sourceforge.net/projects/redpin/files/Redpin%20Standalone%20Server/redpin.jar/download">redpin.jar</a> file or build redpin on your own (see <a href="#dev_build">How to build</a>).</li>
+				         <li><i>Recommended:</i> <a href="#mysql">Install MySQL</a></li>
+				        <li>Launch the server from command line using <code>java -jar redpin.jar [port]</code> <br />or use the supplied scripts in the RedpinServer_v2/scripts directory.</li>
+				        <li><i>Optional:</i> <a href="#import">Import some maps</a></li> 
+				        </ul>
+				        
+				        <a name="mysql"></a>
+				        <h4>How to use MySQL</h4>
+				        <ul>
+				        <li>Install <a href="http://dev.mysql.com/downloads/mysql/5.0.html">MySQL Community Server</a> 
+				        <li>Run the 'redpin_mysql.sql' script from the src/resource directory within the RedpinServer_v2 project to configure the database. 
+				        <li>Set the database access credentials by setting the 'db.type' and 'db.location' in the file 'redpin.properties':<br />
+				         <code>db.type=mysql<br />db.location=//localhost:3306/dbname?user=username&password=pwd
+				         </code></li>
+				        </ul>
+				      
+				    </ul>
+				
+				<br>
+				
+		        
+
+			<br class="clear" />
+			<a name="import"></a>
+			<h3>Import maps</h3>
+				<ul>
+					<li>Save map image as png, gif or jpg.</li>
+					<li>Upload image file to your web-server.</li>
+					<li>Use netcat or telnet to send the following request to your server:<br /><code>{"action":"setMap","data":{"mapName":"YOUR MAP NAME","mapURL":"http://your-url.org/..."}}
+</code></li>
+				</ul>
+
+			
+
+
+		
+	</div>
+
+
+</div>
+
+
+<div id="footer" class="fixed">
+    The <a href="mailto:bolligph@inf.ethz.ch">Repin-Team</a>
+    <br class="clear" />     <br class="clear" />
+	Copyright &copy; 2008-2011 ETH Zurich. All rights reserved.</div>
+	<div id="footer_small">Design based on 'nonzero' by <a href="http://www.nodethirtythree.com/">NodeThirtyThree Design</a></div>.
+
+</body>
+</html>

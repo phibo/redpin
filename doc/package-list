@@ -1,0 +1,13 @@
+org.redpin.base.core
+org.redpin.base.core.measure
+org.redpin.base.util
+org.redpin.server.standalone
+org.redpin.server.standalone.core
+org.redpin.server.standalone.core.measure
+org.redpin.server.standalone.db
+org.redpin.server.standalone.db.homes
+org.redpin.server.standalone.db.homes.vector
+org.redpin.server.standalone.json
+org.redpin.server.standalone.locator
+org.redpin.server.standalone.net
+org.redpin.server.standalone.util

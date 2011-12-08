@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+
+	Nonzero1.0 by nodethirtythree design
+	http://www.nodethirtythree.com
+	missing in a maze
+
+-->
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+<title>Redpin - Indoor Positioning for the Rest of Us</title>
+<meta name="keywords" content="redpin, indoor positioning, location" />
+<meta name="description" content="An open source indoor positioning system" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" type="text/css" href="javaCode.css" />
+</head>
+<body>
+
+<div id="header">
+
+	<div id="header_inner" class="fixed">
+
+		<div id="logo">
+		</div>
+		<div id="menu">
+		<ul>
+		  <li><a href="index.html">Home</a></li>
+			<li><a href="server.html">Server</a></li>
+			<li><a href="iphone.html" class="active">iPhone</a></li>
+			<li><a href="android.html">Android</a></li>
+			<li><a href="faq.html">FAQ</a></li>
+		</ul>
+		</div>
+	</div>
+</div>
+
+<div id="main">
+
+	<div id="main_inner" class="fixed">
+
+		<div id="primaryContent_columnless">
+
+			<div id="columnA_columnless">
+			
+				<h3>Redpin iPhone Client</h3>
+				<h4>How to install</h4>
+				<img src="images/iphone/iphone1.jpg" class="floatRL" alt="Example Fingerprints on a Map" />
+				<div style="width:300px;">
+
+					<ul>				        
+						<li>Check out the 'RedpiniPhone' project from the <a href="http://sourceforge.net/svn/?group_id=219301">Redpin sourceforge site</a> or download the <a href="https://sourceforge.net/projects/redpin/files/release-3.1/RedpiniPhone.zip/download">RedpiniPhone.zip</a> file and open it in XCode</li>
+						<li>Join the <a href="http://developer.apple.com/iphone/program/">iPhone Developer Program</a></li>
+						<li><a href="http://developer.apple.com/iphone/my/bundles/index.action">Create your App ID</a> and change the XCode project settings accordingly</li>
+						<li><a href="http://developer.apple.com/iphone/my/provision/index.action">Create a Development Provisioning Profile</a> and install it</li>
+						<li>Build and distribute the Redpin iPhone app</li>
+						<li>On the iPhone, change the app settings and adjust ip and port to your values (or change the default values in the source file ServerConnection.m)</li>
+					</ul>
+
+				</div>
+		
+				<br class="clear" />
+				<p>Now you're ready to <a href="#inaction">run Redpin</a>. Have fun! <br />Feel free to subscribe to our <a href="https://lists.sourceforge.net/lists/listinfo/redpin-support">mailing list</a>.</p>
+	   
+
+				<a name="inaction" ></a>
+				<h4>iPhone Client in Action</h4>
+	  
+				<script type='text/javascript' src='mediaplayer/swfobject.js'></script>
+			 
+				<div id="mediaspace">
+					<ul>
+					   	<li><a href="resources/mov/screencast1.mov">Screencast 1</a></li>
+					   	<li><a href="resources/mov/screencast2.mov">Screencast 2</a></li>
+					   	<li><a href="resources/mov/screencast3.mov">Screencast 3</a></li>
+					</ul>
+				</div>
+					 
+				<script type='text/javascript'>
+				  var so = new SWFObject('mediaplayer/player.swf','mpl','650','470','9');
+				  so.addParam('allowfullscreen','true');
+				  so.addParam('allowscriptaccess','always');
+				  so.addParam('wmode','opaque');
+				  so.addVariable('playlistfile','resources/mov/list.xml');
+				  so.addVariable('playlist','right');
+				  so.addVariable('playlistsize','200');
+				  so.write('mediaspace');
+				</script>
+		
+				<p>&nbsp;</p>
+
+   	</div>	
+		</div> 
+</div>
+
+<div id="footer" class="fixed">
+    The <a href="mailto:bolligph@inf.ethz.ch">Redpin-Team</a>
+    <br class="clear" />     <br class="clear" />
+	Copyright &copy; 2008-<?php echo date('Y')?> ETH Zurich. All rights reserved.</div>
+	<div id="footer_small">Design based on 'nonzero' by <a href="http://www.nodethirtythree.com/">NodeThirtyThree Design</a>
+	</div>
+</div>
+
+</body>
+</html>

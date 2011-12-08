@@ -6,7 +6,9 @@
 	missing in a maze
 
 -->
-<html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
 <title>Redpin - Indoor Positioning for the Rest of Us</title>
@@ -23,17 +25,15 @@
 
 		<div id="logo">
 		</div>
-		
-		<!-- <div id="menu">
-			<ul>
-				<li><a href="#" class="active">Blog</a></li>
-				<li><a href="#">About Me</a></li>
-				<li><a href="#">Photos</a></li>
-				<li><a href="#">Resources</a></li>
-				<li><a href="#">Contact Me</a></li>
-			</ul>
-		</div> -->
-		
+		<div id="menu">
+		<ul>
+		  <li><a href="index.html" class="active">Home</a></li>
+			<li><a href="server.html">Server</a></li>
+			<li><a href="iphone.html">iPhone</a></li>
+			<li><a href="android.html">Android</a></li>
+			<li><a href="faq.html">FAQ</a></li>
+		</ul>
+		</div>
 	</div>
 </div>
 
@@ -44,118 +44,85 @@
 		<div id="primaryContent_columnless">
 
 			<div id="columnA_columnless">
-		
+
 				<h3>What is Redpin?</h3>
 				<p>
-					Repin is an open source indoor positioning system that was developed with the goal of providing at least room-level accuracy.
+					Redpin is an open source indoor positioning system that was developed with the goal of providing at least room-level accuracy.
 					Moreover, it avoids the time-consuming training and setup phase known from other systems and instead relies on the user
-					community. </li>
-					</ul>
+					community.
+
 				</p>
 
-                <h4>How it works</h4>
+        		        <h4>How it works</h4>
 				<p>Redpin can determine the location of a device with room level accuracy. Being a fingerprint-based system, Redpin will not provide geographic coordinates but rather symbolic identifiers as for example the number or name of a room. <!--In order to increase accuracy and reliability, Redpin measures WiFi (802.11), GSM as well as Bluetooth signals.-->
 				</p>
 				
-                <img src="images/fingerprints.png" class="floatTL" alt="Example Fingerprints on a Map" />
+			        <img src="images/fingerprints.png" class="floatTL" alt="Example Fingerprints on a Map" />
 				
 				<p>Instead of relying on a static fingerprint model, Redpin does not make a difference between training and usage. Redpin can be used right away and allows its user to enter the symbolic labels if necessary. As this is an ongoing process, Redpin can also easily adapt to changes in the environment, caused for example by replaced access points.
-For more detailed information please refer to our paper <a href="http://www.vs.inf.ethz.ch/publ/papers/bolligph-redpin2008.pdf">Redpin -  Adaptive, Zero-Configuration Indoor Localization through User Collaboration</a>.<br>
+For more detailed information please refer to our paper <a href="http://www.vs.inf.ethz.ch/publ/papers/bolligph-redpin2008.pdf">Redpin -  Adaptive, Zero-Configuration Indoor Localization through User Collaboration</a>.<br />
+To further increase the accuracy and the adaptability of the locator, Redpin allows multiple measurements taken consecutively to be added to the same fingerprint. We call this process 'Interval Labeling'. For more information on Interval Labeling please refer to our paper <a href="http://www.vs.inf.ethz.ch/publ/papers/bolliger-loca09.pdf">Improving Location Fingerprinting through Motion Detection and Asynchronous Interval Labeling</a>. In addition, Redpin employs a two stage positioning mechanism: if fingerprints consist of only a few measurements, Redpin uses a kNN variant while SVM is used for big fingerprints.  
 				</p>
-				<br>
+				<br />
 				
-				<p>Redpin consist of two basic components: a sniffer component that gathers and collects information about different wireless devices in range in order to create a fingerprint, and a locator component, which stores measured fingerprints in a repository and contains the algorithm to locate a mobile device. To allow easy, realiable and fast user collaboration, the locator is run as a central server. It is implemented using Java SE 6.0 and SQLite (or MySQL). As sniffer component we use an iPhone application that gathers information about different wireless devices in range.
+				<p>Redpin consist of two basic components: a sniffer component that gathers and collects information about different wireless devices in range in order to create a fingerprint, and a locator component, which stores measured fingerprints in a repository and contains the algorithm to locate a mobile device. To allow easy, reliable and fast user collaboration, the locator is run as a central server. It is implemented using Java SE 6.0 and SQLite (or MySQL). As sniffer component we use an iPhone application that gathers information about different wireless devices in range.<br />
+					Interval Labeling for the Redpin Client application works as follows. When a user adds a new location, the current location is stored, and an interval scanner is instantiated. The interval scanner runs in the background, and periodically performs a scan of WiFi networks, creating fingerprints by attaching the current location to  the new WiFi measurements. The fingerprint is then being sent to the server and is stored there. Interval scanning is stopped whenever a significant movement is detected through the built-in iPhone accelerometer, or when the users try to either add a new location or locate themselves.
 				</p>
 				
-				
-				
-				
-				<h3>How to install</h3>
+				<h3>Quickstart</h3>
 				<img src="images/iphone/iphone1.jpg" class="floatRL" alt="Example Fingerprints on a Map" />
 				<div style="width:300px;">
-				 
-				<p>
-				All Redpin components are available as either <a href="http://www.eclipse.org/">Eclipse</a> or <a href="http://developer.apple.com/tools/xcode/">XCode</a> projects and can be downloaded from the <a href="http://sourceforge.net/svn/?group_id=219301">Redpin sourceforge site</a> via SVN.
-				The server can also be downloaded as a jar file from the download section <a href="https://sourceforge.net/projects/redpin/files/">here</a>.
+					<p>
+						All Redpin components are available as either <a href="http://www.eclipse.org/">Eclipse</a> or <a href="http://developer.apple.com/tools/xcode/">XCode</a> projects and can be downloaded from the <a href="http://sourceforge.net/svn/?group_id=219301">Redpin sourceforge site</a> via SVN.
+						The server can also be downloaded as a jar file from the download section <a href="https://sourceforge.net/projects/redpin/files/">here</a>.
 				
-			</p>
+					</p>
 				
 				
-		        <h4>Redpin Standalone Server</h4>
-				<p>
-				    <ul>
-				        <li>Download the <a href="http://sourceforge.net/projects/redpin/files/Redpin%20Standalone%20Server/redpin.jar/download">redpin.jar</a> file.</li>
-				        <li>Launch the server from command line using <br /><code>java -jar redpin.jar [port]</code></li>
-				    </ul>
-				    <ul>
-				        <li>For more information have a look at the <a href="redpin-standalone.html">detailed installation instructions</a>
+					<h4>Redpin Standalone Server</h4>
+					
+					<ul>
+						<li>Download the <a href="http://sourceforge.net/projects/redpin/files/release-3.1/redpin.jar/download">redpin.jar</a> file.</li>
+						<li>Launch the server from command line using <br /><code>java -jar redpin.jar [port]</code></li>
+					</ul>				
+						
+					<h4>Redpin Clients</h4>
 
-				    </ul>
-				    <br>	    
-			<h4>Redpin iPhone Client</h4>
-				    <ul>				        
-				        <li>Check out the 'Redpin_iPhone' project from the <a href="http://sourceforge.net/svn/?group_id=219301">Redpin sourceforge site</a> or download the <a href="https://sourceforge.net/projects/redpin/files/Redpin%20iPhone/Redpin.zip/download">Redpin.zip</a> file and open it in XCode</li>
-				        <li>Join the <a href="http://developer.apple.com/iphone/program/">iPhone Developer Program</a></li>
-				        <li><a href="http://developer.apple.com/iphone/my/bundles/index.action">Create your App ID</a> and change the XCode project settings accordingly</li>
-				        <li><a href="http://developer.apple.com/iphone/my/provision/index.action">Create a Development Provisioning Profile</a> and install it</li>
-				        <li>Build and distribute the Redpin iPhone app</li>
-				        <li>On the iPhone, change the app settings and adjust ip and port to your values (or change the default values in the source file ServerConnection.m)</li>
-				    </ul>
-				    	</p>		
+					<ul>				        
+						<li>Build and install your favorite client: <a href="iphone.html">iPhone</a>, <a href="android.html">Android</a></li>
+						<li>Change the app settings and adjust ip and port to your values (or change the default values in the source files)</li>
+					</ul>
+
 				</div>
-			</div>
-			
-		</div>
-
-		<br class="clear" />
-	   <p>Now you're ready to <a href="#inaction">run Redpin</a>. Have fun! <br />Feel free to subscribe to our <a href="https://lists.sourceforge.net/lists/listinfo/redpin-support">mailing list</a>.</p>
+		
+				<br class="clear" />
+				<p>Now you're ready to use Redpin. Have fun! <br />Feel free to subscribe to our <a href="https://lists.sourceforge.net/lists/listinfo/redpin-support">mailing list</a>.</p>
 	   
 
-		 <a name="inaction" ></a>
-	   <h3>Redpin in Action</h3>
-	  
-	   <script type='text/javascript' src='mediaplayer/swfobject.js'></script>
- 
-		<div id='mediaspace'><ul>
-	   	<li><a href="resources/mov/screencast1.mov">Screencast 1</a></li>
-	   	<li><a href="resources/mov/screencast2.mov">Screencast 2</a></li>
-	   	<li><a href="resources/mov/screencast3.mov">Screencast 3</a></li>
-	   </ul></div>
-		 
-		<script type='text/javascript'>
-		  var so = new SWFObject('mediaplayer/player.swf','mpl','650','470','9');
-		  so.addParam('allowfullscreen','true');
-		  so.addParam('allowscriptaccess','always');
-		  so.addParam('wmode','opaque');
-		  so.addVariable('playlistfile','resources/mov/list.xml');
-		  so.addVariable('playlist','right');
-		  so.addVariable('playlistsize','200');
-		  so.write('mediaspace');
-		</script>
+				
 		
-		<p>&nbsp;</p>
+				
+				 <h3>Contributions</h3>
+				<p>Are you working on modifications, improvements, or would like to contribute something? <a href="mailto:bolligph@inf.ethz.ch">Let us know</a>
+				<br />
+				Feel free to subscribe to our <a href="https://lists.sourceforge.net/lists/listinfo/redpin-support">mailing list</a>
+				</p>
 		
-	 <h3>But wait...</h3>
-	   <p>Are you working on modifications, improvements, or would like to contribute something? <a href="mailto:pbolliger@gmail.com">Let us know</a>
-	   <br />
-	   Feel free to subscribe to our <a href="https://lists.sourceforge.net/lists/listinfo/redpin-support">mailing list</a></p>
-
-	
-
-		
-	<p>&nbsp;</p>
-	   <h3>Redpin symbian</h3>
-	   <p>If you'd like to use the old version of redpin (for symbian), all information needed can be found <a href="redpin-symbian.html">here</a>
-	</div>
-
-
+				<p>&nbsp;</p>
+				<h3>Redpin symbian</h3>
+				<p>If you'd like to use the old version of redpin (for symbian), all information needed can be found <a href="symbian.html">here</a>
+				</p>
+   	</div>	
+		</div> 
 </div>
 
 <div id="footer" class="fixed">
-    The <a href="mailto:pbolliger@gmail.com">Repin-Team</a>
+    The <a href="mailto:bolligph@inf.ethz.ch">Redpin-Team</a>
     <br class="clear" />     <br class="clear" />
-	Copyright &copy; 2008-2011 ETH Zurich. All rights reserved.</div>
-	<div id="footer_small">Design based on 'nonzero' by <a href="http://www.nodethirtythree.com/">NodeThirtyThree Design</a></div>.
+	Copyright &copy; 2008-<?php echo date('Y')?> ETH Zurich. All rights reserved.</div>
+	<div id="footer_small">Design based on 'nonzero' by <a href="http://www.nodethirtythree.com/">NodeThirtyThree Design</a>
+	</div>
+</div>
 
 </body>
 </html>

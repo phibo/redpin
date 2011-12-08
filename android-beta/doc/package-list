@@ -1,0 +1,16 @@
+org.redpin.android
+org.redpin.android.core
+org.redpin.android.core.measure
+org.redpin.android.db
+org.redpin.android.json
+org.redpin.android.net
+org.redpin.android.net.home
+org.redpin.android.net.wifi
+org.redpin.android.provider
+org.redpin.android.ui
+org.redpin.android.ui.components
+org.redpin.android.ui.list
+org.redpin.android.util
+org.redpin.base.core
+org.redpin.base.core.measure
+org.redpin.base.util

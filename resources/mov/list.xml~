@@ -1,0 +1,22 @@
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/">
+	<channel>
+		<title>playlistr</title>
+		<link>http://www.redpin.org</link>
+
+		<item>
+			<title>Screencast 1</title>
+			<media:content url="file:///home/pascal/data/ethz/redpin/redpin_website/resources/mov/screencast1.mov" type="video/x-mov" duration="56" />
+		</item>
+
+		<item>
+			<title>Screencast 2</title>
+			<media:content url="http://www.redpin.org/resources/mov/screencast2.flv" type="video/x-flv" duration="49" />
+		</item>
+<item>
+			<title>Screencast 3</title>
+			<media:content url="http://www.redpin.org/resources/mov/screencast3.flv" type="video/x-flv" duration="29" />
+		</item>
+
+	</channel>
+</rss>
+

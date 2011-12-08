@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+
+	Nonzero1.0 by nodethirtythree design
+	http://www.nodethirtythree.com
+	missing in a maze
+
+-->
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+<title>Redpin - Indoor Positioning for the Rest of Us</title>
+<meta name="keywords" content="redpin, indoor positioning, location" />
+<meta name="description" content="An open source indoor positioning system" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" type="text/css" href="javaCode.css" />
+</head>
+<body>
+
+<div id="header">
+
+	<div id="header_inner" class="fixed">
+
+		<div id="logo">
+		</div>
+		<div id="menu">
+		<ul>
+		  <li><a href="home.html">Home</a></li>
+			<li><a href="server.html">Server</a></li>
+			<li><a href="iphone.html">iPhone</a></li>
+			<li><a href="android.html">Android</a></li>
+			<li><a href="faq.html">FAQ</a></li>
+		</ul>
+		</div>
+	</div>
+</div>
+
+<div id="main">
+
+	<div id="main_inner" class="fixed">
+
+		<div id="primaryContent_columnless">
+
+			<div id="columnA_columnless">
+			
+			<h3>Redpin Symbian Client</h3>
+			
+			<p>Redpin consist of two basic components: a sniffer component that gathers and collects information about different wireless devices in range in order to create a fingerprint, and a locator component, which stores measured fingerprints in a repository and contains the algorithm to locate a mobile device. To allow easy, realiable and fast user collaboration, the locator is run as a central server. It is implemented using Java SE 5.0 and MySQL. We use Java Micro Edition for the GUI and all communication aspects, and Symbian Series 60 for the sniffer component. This separation was necessary, as only the Symbian API would allow us to get the information we wanted to collect. For both the server and the mobile client, we used the <a href="http://www.openbandy.org">Open Bandy</a> library to handle the serialization, transmission, and storage of the measured data. 
+				</p>
+				
+				
+				
+				
+				<h3>How to install</h3>
+				All Redpin components are available as either <a href="http://www.eclipse.org/">Eclipse</a> or <a href="http://www.forum.nokia.com/main/resources/tools_and_sdks/carbide/">Carbide</a> projects and can be downloaded from the <a href="http://sourceforge.net/svn/?group_id=219301">Redpin sourceforge site</a> via SVN.
+				The midlet and the server can also be downloaded as a jar file from the download section <a href="http://sourceforge.net/project/showfiles.php?group_id=219301&package_id=264615"> here</a>.
+				
+				<br>
+				<br>
+				<h4>Redpin Sniffer (Symbian S60)</h4>
+				    <ul>
+				        <li>Install <a href="http://www.forum.nokia.com/info/sw.nokia.com/id/dbb8841d-832c-43a6-be13-f78119a2b4cb.html">Carbide</a> and <a href="http://www.forum.nokia.com/info/sw.nokia.com/id/4a7149a5-95a5-4726-913a-3c6f21eb65a5/S60-SDK-0616-3.0-mr.html">S60 3rd edition FP1 SDK</a> (FP2 can also be used).
+	<br class="clear" />
+	<a href="http://www.forum.nokia.com/info/sw.nokia.com/id/6286548d-3a94-4037-9454-98fcf5d363d3/Carbide_c_Express_10_installation.html">Here</a> you can also find useful information about the above installations steps.</li>
+				        <li>Check out the 'RedpinSniffer' project from the <a href="http://sourceforge.net/svn/?group_id=219301">Redpin sourceforge site</a> into your Carbide workspace.</li>
+				        <li>Build it.</li>
+				        <li><a href="?p=symbian-signing">Sign the .sis file.</a></li>
+						<li>Install the sis file on the phone (using Bluetooth or USB).</li>
+				    </ul>
+				
+				<br>
+				<h4>Redpin Mobile (J2ME)</h4>
+				    <ul>
+				        <li>Install <a href="http://www.eclipse.org/">Eclipse</a> and the J2ME SDK of your choice (we recommend the Sun WTK 2.5.2).</li>
+	                   <li>Install <a href="http://eclipseme.org/docs/installation.html">EclipseME</a> and configure Eclipse <a href="http://eclipseme.org/docs/configuring.html">accordingly.</a></li>
+				        <li>Check out the 'Redpin' project from the <a href="http://sourceforge.net/svn/?group_id=219301">Redpin sourceforge site</a> into your Eclipse workspace.</li>
+				        <li>Create the <a href="http://eclipseme.org/docs/packaging.html">MIDlet package</a> (i.e., the jar file).</li>
+						<li>Install the resulting jar file on the phone (using Bluetooth or USB).</li>
+				    </ul>
+				    			
+				<br>
+		        <h4>Redpin Server (J2SE)</h4>
+				    <ul>
+				        <li>Check out the 'RedpinServer' project from the <a href="http://sourceforge.net/svn/?group_id=219301">Redpin sourceforge site</a> into your Eclipse workspace.</li>
+				        <li>Install <a href="http://dev.mysql.com/downloads/mysql/5.0.html">MySQL Community Server</a> and run the 'redpin.sql' script from the conf directory within the RedpinServer project to configure the database.</li>
+				        <li>Set the database access credentials by setting the 'DatabaseConnectionProperties' in the class 'RedpinServer.java'.</li>
+						<li>Launch 'RedpinServer'.</li>
+				    </ul>
+		
+			<h4>Starting-up Redpin</h4>
+            
+
+				<br class="clear" />
+				<ul><li> Launch the Redpin server.</li>
+					<li> Turn on Bluetooth on the phone. </li>
+					<li> Launch the 'RedpinSniffer' application on the phone. </li>
+					<li> Choose 'StartSocketServer' from the options menu.</li>
+					<li> Keep the RedpinSniffer running in background and launch the 'Redpin' Java MIDlet on the phone.</li>
+			
+					<li> Have fun!</li>
+				</ul>
+
+
+
+			<br class="clear" />
+			<h4>Preloading Map Images</h4>
+				<ul>
+					<li> Save map image as png, gif or jpeg.</li>
+					<li> Upload image file to your web-server.</li>
+					<li> Create an entry in the redpin database-table 'map' (e.g. insert into map (mapName, mapURL) values ("IFW A", "http://www.redpin.org/resources/maps/layout_IFW_A.gif"))</li>
+				</ul>
+
+			<h4>Redpin in Action</h4>
+
+
+		
+				<ul><img src="images/scanning.png" class="floatTL" alt="Scanning radios from neighborhood" 
+		width="240" height="320"/>
+					<li> (a) During initialization, Redpin is <i>sniffing</i> for some data </li>
+		<br class="clear" />
+				<img src="images/retrieving_position.png" class="floatTL" alt="Retrieving position from database" 
+				width="240" height="320"/>
+					<li> (b) Redpin asks to the database if the measurment match with some known location</li>
+
+		<br class="clear" />
+				<img src="images/unknown_position.png" class="floatTL" alt="Unknown position" 
+				width="240" height="320"/>
+					<li> (c) If the location is unknown you're promted to enter the data for the new location </li>
+
+		<br class="clear" />
+		<img src="images/maplist.png" class="floatTL" alt="Available map list" 
+		width="240" height="320"/>
+					<li> (d) You choose a floorplan from a list of available maps</li>
+
+		<br class="clear" />
+		<img src="images/set_position.png" class="floatTL" alt="Set position" 
+		width="240" height="320"/>
+					<li> (e) Set the marker to your current position</li>
+
+		<br class="clear" />
+		<img src="images/roomlabel.png" class="floatTL" alt="Set the room label" 
+		width="240" height="320"/>
+					<li> (f) You enter the location name</li>
+
+		<br class="clear" />
+				<img src="images/position_set.png" class="floatTL" alt="Position set" 
+				width="240" height="320"/>
+					<li> (g) The data is saved in the database</li>
+		<br class="clear" />
+				<img src="images/locator.png" class="floatTL" alt="Capabilities" 
+				width="240" height="320"/>
+					<li> (h) A red pulsing circle is showing the last current location </li>
+
+
+
+
+		
+
+
+			<br class="clear" />
+		</ul>
+
+
+   	</div>	
+		</div> 
+</div>
+
+<div id="footer" class="fixed">
+    The <a href="mailto:bolligph@inf.ethz.ch">Redpin-Team</a>
+    <br class="clear" />     <br class="clear" />
+	Copyright &copy; 2008-<?php echo date('Y')?> ETH Zurich. All rights reserved.</div>
+	<div id="footer_small">Design based on 'nonzero' by <a href="http://www.nodethirtythree.com/">NodeThirtyThree Design</a>
+	</div>
+</div>
+
+</body>
+</html>
